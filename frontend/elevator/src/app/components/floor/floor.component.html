@@ -1,0 +1,19 @@
+<td class="floor-number">{{ floorIndex }}</td>
+
+<td *ngFor="let elevator of elevators" class="elevator-cell">
+  <div
+    class="elevator-box"
+    [class.active]="isElevatorActive(elevator)">
+    <span *ngIf="isElevatorActive(elevator) && goesUp(elevator)">↑</span>
+    <span *ngIf="isElevatorActive(elevator) && goesDown(elevator)">↓</span>
+  </div>
+</td>
+
+<td class="floor-buttons">
+  <button [disabled]="floorIndex === numberOfFloors"
+          (click)="callElevatorToFloor(floorIndex, Direction.UP)">↑
+  </button>
+  <button [disabled]="floorIndex === 0"
+          (click)="callElevatorToFloor(floorIndex, Direction.DOWN)">↓
+  </button>
+</td>

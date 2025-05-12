@@ -1,0 +1,28 @@
+<table class="elevator-table">
+  <thead>
+  <tr>
+    <th></th>
+    <th *ngFor="let elevator of elevators$ | async; let i = index">
+      <div class="control-panel-grid">
+        <button
+          *ngFor="let f of [].constructor(NUMBER_OF_FLOORS); let floor = index"
+          (click)="selectFloor(i , NUMBER_OF_FLOORS - floor - 1)">
+          {{ NUMBER_OF_FLOORS - floor - 1 }}
+        </button>
+      </div>
+    </th>
+
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let f of [].constructor(NUMBER_OF_FLOORS); let rowIndex = index"
+      app-floor
+      [floorIndex]="NUMBER_OF_FLOORS - rowIndex - 1"
+      [elevators]="elevators$ | async"
+      [numberOfFloors]="NUMBER_OF_FLOORS"
+      (callElevator)="callElevator($event)">
+  </tr>
+  </tbody>
+</table>

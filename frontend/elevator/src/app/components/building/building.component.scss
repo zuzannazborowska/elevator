@@ -1,0 +1,30 @@
+.elevator-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.elevator-table th,
+.elevator-table td {
+  border: 1px solid #ddd;
+  padding: 4px;
+  vertical-align: middle;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.control-panel button {
+  margin: 1px;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+}
+

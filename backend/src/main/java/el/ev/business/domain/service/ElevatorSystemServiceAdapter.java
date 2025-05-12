@@ -25,10 +25,10 @@ public class ElevatorSystemServiceAdapter implements ElevatorSystemService {
 
     @PostConstruct
     public void init() {
-        for (int i = 1; i <= ElevatorConstants.NUMBER_OF_ELEVATORS; i++) {
+        for (int i = 0; i <= ElevatorConstants.NUMBER_OF_ELEVATORS; i++) {
             Elevator e = new Elevator();
             e.setId(i);
-            e.setCurrentFloor(1);
+            e.setCurrentFloor(0);
             elevators.put(i, e);
         }
     }
