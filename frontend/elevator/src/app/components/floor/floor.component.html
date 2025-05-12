@@ -10,7 +10,7 @@
 </td>
 
 <td class="floor-buttons">
-  <button [disabled]="floorIndex === numberOfFloors"
+  <button [disabled]="floorIndex === numberOfFloors -1 "
           (click)="callElevatorToFloor(floorIndex, Direction.UP)">↑
   </button>
   <button [disabled]="floorIndex === 0"
